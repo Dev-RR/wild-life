@@ -1,0 +1,307 @@
+blockquote,
+body,
+h1,
+li,
+p,
+ul {
+    padding: 0;
+    margin: 0;
+    max-width: 1366px;
+    margin: 0 auto
+}
+
+li {
+    list-style: none
+}
+
+a {
+    text-decoration: none
+}
+
+body {
+    font-family: Vollkorn, serif
+}
+
+.estrutura {
+    display: grid;
+    grid-template-columns: minmax(150px, 1fr) 3fr 300px;
+    grid-template-areas: "header header header" "sidenav content anuncios" "footer footer footer"
+}
+
+.header {
+    grid-area: header;
+    background: linear-gradient(135deg, #4d5d53, #738678);
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center
+}
+
+.header nav ul {
+    display: flex;
+    flex-wrap: wrap
+}
+
+.header nav a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    font-size: 1.125em;
+    background: rgba(0, 0, 0, .1);
+    border-radius: 5px;
+    transition: .1s
+}
+
+.header nav a:hover {
+    background: rgba(0, 0, 0, .5)
+}
+
+.header li+li {
+    margin-left: 30px
+}
+
+.logo {
+    max-width: 300px
+}
+
+.sidenav {
+    grid-area: sidenav;
+    background: #fafbfc;
+    padding: 30px
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    border-radius: 5px
+}
+
+.sidenav li a {
+    display: block;
+    min-height: 60px;
+    max-width: 100px;
+    margin: 0 auto 30px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 0 rgba(44, 44, 44, .15);
+    transition: 1s ease-out;
+    width: 50%
+}
+
+.sidenav li a img {
+    width: 100px
+}
+
+.sidenav li a:hover {
+    background: #8f9779
+}
+
+.content {
+    grid-area: content;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px
+}
+
+.col-wide {
+    grid-column: 1/-1
+}
+
+.imagem1 {
+    grid-row: span 2;
+    align-self: end
+}
+
+.imagem2 {
+    align-self: end
+}
+
+.imagem3 {
+    width: 100%
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    letter-spacing: -.005em;
+    color: rgba(0, 0, .7)
+}
+
+.informacoes p+p {
+    margin-top: 30px
+}
+
+.titulo {
+    color: #738678
+}
+
+.titulo h1 {
+    font-size: 3.75em;
+    line-height: 1;
+    font-family: 700
+}
+
+.titulo span {
+    font-size: .875em;
+    font-style: italic
+}
+
+.caracteristicas {
+    display: flex;
+    align-items: flex-start
+}
+
+.caracteristicas>div {
+    width: 80px;
+    text-align: center;
+    background: linear-gradient(135deg, #4d5d53, #738678);
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 0 rgba(44, 44, 44, .15);
+    position: relative
+}
+
+.caracteristicas>div:first-child {
+    margin-right: 30px
+}
+
+.caracteristicas span {
+    display: block;
+    color: #738678
+}
+
+.numero {
+    color: #738678;
+    font-size: 3em;
+    line-height: 1;
+    margin-top: 10px auto
+}
+
+.rotulo {
+    background: #fff;
+    border-radius: 0 0 5px 5px;
+    padding: 5px 0;
+    position: relative;
+    top: 2px
+}
+
+.destaque {
+    font-size: .875em;
+    color: #738678;
+    max-width: 16em
+}
+
+.atributos,
+.citacao {
+    align-self: start;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 0 rgba(44, 44, 44, .15);
+    background: linear-gradient(135deg, #4d5d53, #738678)
+}
+
+.citacao p {
+    font-size: 1.5em;
+    font-style: italic;
+    text-align: center;
+    color: #fff
+}
+
+.atributos li {
+    color: #fff;
+    font-family: Courier, monospace;
+    font-size: 1.125em;
+    padding: 15px
+}
+
+.atributos li+li {
+    border-top: 2px solid #738678
+}
+
+.anuncios {
+    grid-area: anuncios;
+    display: grid;
+    background: #fafbfc;
+    align-content: start;
+    padding: 30px;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax (150px, 1fr))
+}
+
+.footer {
+    grid-area: footer;
+    background: linear-gradient(135deg, #4d5d53, #738678)
+}
+
+.footer p {
+    color: #fff;
+    text-align: center;
+    padding: 30px
+}
+
+@media (max-width:1200px) {
+    .estrutura {
+        grid-template-areas: "header header" "sidenav content" "sidenav anuncios" "footer footer";
+        grid-template-columns: minmax(150px, 1fr) 3fr
+    }
+}
+
+@media (max-width:750px) {
+    .estrutura {
+        grid-template-areas: "header" "sidenav" "content" "anuncios" "footer";
+        grid-template-columns: auto
+    }
+}
+
+@media (max-width:750px) {
+    .header {
+        grid-template-columns: auto
+    }
+
+    .logo {
+        margin-bottom: 20px
+    }
+
+    .header nav a {
+        font-size: 1em
+    }
+
+    .header nav li+li {
+        margin-left: 10px
+    }
+}
+
+@media (max-width:750px) {
+    .sidenav {
+        overflow-x: auto
+    }
+
+    .sidenav ul {
+        display: flex
+    }
+
+    .sidenav li {
+        flex: 1 0 60px
+    }
+
+    .sidenav {
+        padding: 0 30px
+    }
+
+    .sidenav li a {
+        margin: 30px 30px 30px 0
+    }
+}
+
+@media (max-width:500px) {
+    .content {
+        grid-template-columns: auto
+    }
+
+    img {
+        width: 100%
+    }
+}
